@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة القبول - جامعة الملك عبدالعزيز</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-section">
+                <img src="kau_logo.png" alt="شعار جامعة الملك عبدالعزيز" class="logo">
+                <div class="university-info">
+                    <h1>جامعة الملك عبدالعزيز</h1>
+                    <h2>بوابة القبول الإلكتروني</h2>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="welcome-section">
+                <h3>مرحباً بك في بوابة القبول</h3>
+                <p>يمكنك الاستعلام عن حالة قبولك وإتمام إجراءات التسجيل</p>
+            </div>
+
+            <div class="inquiry-form">
+                <h4>الاستعلام عن القبول</h4>
+                <form id="inquiryForm">
+                    <div class="form-group">
+                        <label for="nationalId">رقم الهوية الوطنية</label>
+                        <input type="text" id="nationalId" name="nationalId" required maxlength="10" placeholder="أدخل رقم الهوية الوطنية">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" required placeholder="أدخل البريد الإلكتروني">
+                    </div>
+
+                    <button type="submit" class="btn-primary">استعلام عن القبول</button>
+                </form>
+            </div>
+
+            <div id="admissionResult" class="admission-result hidden">
+                <!-- سيتم عرض نتيجة الاستعلام هنا -->
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 جامعة الملك عبدالعزيز - جميع الحقوق محفوظة</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
