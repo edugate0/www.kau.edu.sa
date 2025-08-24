@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البطاقة الجامعية - جامعة الملك عبدالعزيز</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Cairo', sans-serif;
+            color: #333;
+        }
+        .container {
+            max-width: 1700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .page-header {
+            background-color: #0056b3;
+            color: white;
+            padding: 30px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .page-header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        .page-header p {
+            font-size: 1.1em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        .student-card-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+        .student-card {
+            width: 900px;
+            height: 270px;
+            background: linear-gradient(135deg, #0056b3, #003d80);
+            border-radius: 15px;
+            color: white;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        .student-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+        .student-card::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        .card-header .logo {
+            height: 40px;
+        }
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.3em;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .card-body {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .student-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            object-fit: cover;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .student-info p {
+            margin: 5px 0;
+            font-size: 0.60em;
+            line-height: 1.4;
+        }
+        .student-info p strong {
+            font-weight: 600;
+        }
+        .card-footer {
+            text-align: center;
+            font-size: 0.8em;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="kau-logo.png" alt="شعار جامعة الملك عبدالعزيز" class="logo">
+                    <div class="logo-text">
+                        <h1>جامعة الملك عبدالعزيز</h1>
+                        <p>بوابة الخدمات الأكاديمية</p>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="academic.html" class="nav-link">الرئيسية</a></li>
+                        <li><a href="registration.html" class="nav-link">تسجيل المقررات</a></li>
+                        <li><a href="schedule.html" class="nav-link">الجدول الدراسي</a></li>
+                        <li><a href="#" class="nav-link">الشؤون المالية</a></li>
+                        <li><a href="#" class="nav-link active">البطاقة الجامعية</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="notification-btn" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-btn" id="userBtn">
+                            <i class="fas fa-user"></i>
+                            <span>أهلاً بك</span>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="index.html">تسجيل الدخول</a>
+                            <a href="profile.html">الملف الشخصي</a>
+                            <a href="settings.html">الإعدادات</a>
+                            <a href="#" onclick="logout()">تسجيل الخروج</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>البطاقة الجامعية</h1>
+            <p>معلومات البطاقة الجامعية للطالبة يقين احمد العلي</p>
+        </div>
+
+        <div class="student-card-section">
+            <div class="student-card">
+                <div class="card-header">
+                    <img src="kau-logo.png" alt="KAU Logo" class="logo">
+                    <h2>جامعة الملك عبدالعزيز</h2>
+                </div>
+                <div class="card-body">
+                    <img src="https://via.placeholder.com/80" alt="" class="student-photo">
+                    <div class="student-info">
+                        <p><strong>الاسم:</strong> يقين احمد العلي</p>
+                        <p><strong>الرقم الجامعي:</strong> 202511923</p>
+                        <p><strong>التخصص:</strong> الموارد البشرية</p>
+                        <p><strong>رقم الهوية:</strong> 1137521918</p>
+                         </div>
+                </div>
+                <div class="card-footer">
+                    <p>صلاحية البطاقة: 2025 - 2028</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>عن البوابة</h3>
+                    <p>بوابة الخدمات الأكاديمية هي منصة شاملة تقدم جميع الخدمات الإلكترونية لطلاب ومنسوبي جامعة الملك عبدالعزيز.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#">الخدمات</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                        <li><a href="#">الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> جدة، المملكة العربية السعودية</p>
+                    <p><i class="fas fa-envelope"></i> info@kau.edu.sa</p>
+                    <p><i class="fas fa-phone"></i> +966 12 695 2000</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 جامعة الملك عبدالعزيز. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الخدمات الأكاديمية - جامعة الملك عبدالعزيز</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="kau-logo.png" alt="شعار جامعة الملك عبدالعزيز" class="logo">
+                    <div class="logo-text">
+                        <h1>جامعة الملك عبدالعزيز</h1>
+                        <p>بوابة الخدمات الأكاديمية</p>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                        <li><a href="#services" class="nav-link">الخدمات</a></li>
+                        <li><a href="#about" class="nav-link">عن البوابة</a></li>
+                        <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="notification-btn" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-btn" id="userBtn">
+                            <i class="fas fa-user"></i>
+                            <span>أهلاً بك</span>
+                        </button>
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="index.html">تسجيل الدخول</a>
+                            <a href="profile.html">الملف الشخصي</a>
+                            <a href="settings.html">الإعدادات</a>
+                            <a href="index.html" onclick="logout()">تسجيل الخروج</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">مرحباً بك في بوابة الخدمات الأكاديمية</h2>
+                    <p class="hero-subtitle">منصة شاملة لجميع الخدمات الأكاديمية والإدارية لطلاب وأعضاء هيئة التدريس والموظفين</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToServices()">
+                            <i class="fas fa-rocket"></i>
+                            استكشف الخدمات
+                        </button>
+                        <button class="btn btn-secondary" onclick="openQuickGuide()">
+                            <i class="fas fa-play"></i>
+                            دليل سريع
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50000">0</div>
+                        <div class="stat-label">طالب وطالبة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="3000">0</div>
+                        <div class="stat-label">عضو هيئة تدريس</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="100">0</div>
+                        <div class="stat-label">خدمة إلكترونية</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access -->
+    <section class="quick-access">
+        <div class="container">
+            <h3 class="section-title">الوصول السريع</h3>
+            <div class="quick-grid">
+                <div class="quick-item" onclick="openService('student-services')">
+                    <div class="quick-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>خدمات الطلاب</h4>
+                    <p>التسجيل، الجداول، النتائج</p>
+                </div>
+                <div class="quick-item" onclick="openService('faculty-services')">
+                    <div class="quick-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h4>خدمات أعضاء هيئة التدريس</h4>
+                    <p>إدارة المقررات والطلاب</p>
+                </div>
+                <div class="quick-item" onclick="openService('employee-services')">
+                    <div class="quick-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h4>خدمات الموظفين</h4>
+                    <p>الموارد البشرية والرواتب</p>
+                </div>
+                <div class="quick-item" onclick="openService('financial-services')">
+                    <div class="quick-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h4>الخدمات المالية</h4>
+                    <p>الرسوم والمدفوعات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">الخدمات الأكاديمية</h3>
+                <p class="section-subtitle">مجموعة شاملة من الخدمات الإلكترونية المتطورة</p>
+            </div>
+            
+            <!-- Service Categories -->
+            <div class="service-categories">
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="students">الطلاب</button>
+                    <button class="tab-btn" data-category="faculty">أعضاء هيئة التدريس</button>
+                    <button class="tab-btn" data-category="employees">الموظفين</button>
+                    <button class="tab-btn" data-category="general">خدمات عامة</button>
+                </div>
+
+                <!-- Students Services -->
+                <div class="category-content active" id="students">
+                    <div class="services-grid">
+                        <div class="service-card" onclick="openServicePage('registration')">
+                            <div class="service-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <h4>التسجيل في المقررات</h4>
+                            <p>تسجيل وحذف وإضافة المقررات الدراسية</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('schedule')">
+                            <div class="service-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h4>الجدول الدراسي</h4>
+                            <p>عرض الجدول الأسبوعي والشهري</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('grades')">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>النتائج والدرجات</h4>
+                            <p>عرض النتائج والمعدل التراكمي</p>
+                            <div class="service-status maintenance">قيد التطوير</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('transcript')">
+                            <div class="service-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h4>كشف الدرجات</h4>
+                            <p>طباعة وتحميل كشف الدرجات</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('financial')">
+                            <div class="service-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h4>الشؤون المالية</h4>
+                            <p>الرسوم الدراسية والمدفوعات</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage(\'documents\')">
+                            <div class="service-icon">
+                                <i class="fas fa-folder-open"></i>
+                            </div>
+                            <h4>الوثائق والشهادات</h4>
+                            <p>طلب الوثائق الرسمية</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+
+
+
+                <!-- Faculty Services -->
+                <div class="category-content" id="faculty">
+                    <div class="services-grid">
+                        <div class="service-card" onclick="openServicePage('course-management')">
+                            <div class="service-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>إدارة المقررات</h4>
+                            <p>إدارة محتوى المقررات والمواد</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('student-management')">
+                            <div class="service-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>إدارة الطلاب</h4>
+                            <p>متابعة حضور وأداء الطلاب</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('grading')">
+                            <div class="service-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <h4>رصد الدرجات</h4>
+                            <p>إدخال ومراجعة درجات الطلاب</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('research')">
+                            <div class="service-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h4>البحث العلمي</h4>
+                            <p>إدارة المشاريع البحثية</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employee Services -->
+                <div class="category-content" id="employees">
+                    <div class="services-grid">
+                        <div class="service-card" onclick="openServicePage('hr-services')">
+                            <div class="service-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <h4>خدمات الموارد البشرية</h4>
+                            <p>الإجازات والترقيات</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('payroll')">
+                            <div class="service-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h4>الرواتب والمكافآت</h4>
+                            <p>كشوف الرواتب والبدلات</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('training')">
+                            <div class="service-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4>التدريب والتطوير</h4>
+                            <p>البرامج التدريبية والدورات</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- General Services -->
+                <div class="category-content" id="general">
+                    <div class="services-grid">
+                        <div class="service-card" onclick="openServicePage('library')">
+                            <div class="service-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h4>المكتبة الرقمية</h4>
+                            <p>الكتب والمراجع الإلكترونية</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('email')">
+                            <div class="service-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>البريد الجامعي</h4>
+                            <p>خدمة البريد الإلكتروني</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                        <div class="service-card" onclick="openServicePage('support')">
+                            <div class="service-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4>الدعم التقني</h4>
+                            <p>المساعدة والدعم الفني</p>
+                            <div class="service-status available">متاح</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Announcements -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">الأخبار والإعلانات</h3>
+                <a href="pages/news.html" class="view-all-btn">عرض الكل</a>
+            </div>
+            <div class="news-grid">
+                <article class="news-card featured">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x250" alt="خبر مهم">
+                        <div class="news-category">إعلان مهم</div>
+                    </div>
+                    <div class="news-content">
+                        <h4>بدء التسجيل للفصل الدراسي الجديد</h4>
+                        <p>يسر عمادة القبول والتسجيل الإعلان عن بدء التسجيل للفصل الدراسي الجديد...</p>
+                        <div class="news-meta">
+                            <span class="news-date">
+                                <i class="fas fa-calendar"></i>
+                                25 يوليو 2025
+                            </span>
+                            <span class="news-views">
+                                <i class="fas fa-eye"></i>
+                                1,234 مشاهدة
+                            </span>
+                        </div>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-content">
+                        <h4>تحديث نظام الخدمات الأكاديمية</h4>
+                        <p>تم تحديث نظام الخدمات الأكاديمية بميزات جديدة...</p>
+                        <div class="news-meta">
+                            <span class="news-date">
+                                <i class="fas fa-calendar"></i>
+                                23 يوليو 2025
+                            </span>
+                        </div>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-content">
+                        <h4>ورشة عمل حول استخدام البوابة الأكاديمية</h4>
+                        <p>تنظم الجامعة ورشة عمل تدريبية للطلاب الجدد...</p>
+                        <div class="news-meta">
+                            <span class="news-date">
+                                <i class="fas fa-calendar"></i>
+                                20 يوليو 2025
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/kau-logo.png" alt="شعار جامعة الملك عبدالعزيز">
+                        <h4>جامعة الملك عبدالعزيز</h4>
+                    </div>
+                    <p>جامعة رائدة في التعليم العالي والبحث العلمي، تسعى لتحقيق التميز الأكاديمي وخدمة المجتمع.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h5>روابط سريعة</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">عن الجامعة</a></li>
+                        <li><a href="colleges.html">الكليات</a></li>
+                        <li><a href="admission.html">القبول</a></li>
+                        <li><a href="research.html">البحث العلمي</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>خدمات الطلاب</h5>
+                    <ul class="footer-links">
+                        <li><a href="registration.html">التسجيل</a></li>
+                        <li><a href="schedule.html">الجداول</a></li>
+                        <li><a href="grades.html">النتائج</a></li>
+                        <li><a href="financial.html">الشؤون المالية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>اتصل بنا</h5>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>800-11-69528</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@kau.edu.sa</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>جدة، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 جامعة الملك عبدالعزيز. جميع الحقوق محفوظة.</p>
+                <div class="footer-bottom-links">
+                    <a href="pages/privacy.html">سياسة الخصوصية</a>
+                    <a href="pages/terms.html">شروط الاستخدام</a>
+                    <a href="pages/accessibility.html">إمكانية الوصول</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="notification-header">
+            <h4>الإشعارات</h4>
+            <button class="close-btn" onclick="closeNotifications()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notification-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>تحديث النظام</h5>
+                    <p>تم تحديث نظام الخدمات الأكاديمية بميزات جديدة</p>
+                    <span class="notification-time">منذ ساعة</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-calendar"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>موعد التسجيل</h5>
+                    <p>يبدأ التسجيل للفصل الجديد غداً</p>
+                    <span class="notification-time">منذ 3 ساعات</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="notification-content">
+                    <h5>تذكير</h5>
+                    <p>لا تنس دفع الرسوم الدراسية</p>
+                    <span class="notification-time">منذ يوم</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>جاري التحميل...</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+
+

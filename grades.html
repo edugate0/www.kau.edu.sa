@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النتائج والدرجات - جامعة الملك عبدالعزيز</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="grades.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="kau-logo.png" alt="شعار جامعة الملك عبدالعزيز" class="logo">
+                    <div class="logo-text">
+                        <h1>جامعة الملك عبدالعزيز</h1>
+                        <p>النتائج والدرجات</p>
+                    </div>
+                </div>
+                <nav class="breadcrumb">
+                    <a href="academic.html">الرئيسية</a>
+                    <i class="fas fa-chevron-left"></i>
+                    <span>النتائج والدرجات</span>
+                </nav>
+                <div class="header-actions">
+                    <a href="academic.html" class="back-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        العودة للرئيسية
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>النتائج والدرجات الأكاديمية</h1>
+                    <p>عرض النتائج والمعدل التراكمي للطالب</p>
+                </div>
+                <div class="page-info">
+                    <div class="student-info">
+                        <div class="student-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="student-details">
+                            <h3>أثير بنت أحمد بن علي هادي أحمد</h3>
+                            <p>الرقم الجامعي: 2420383</p>
+                            <p>كلية الطب - بكالوريوس</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Alert -->
+            <div class="status-alert">
+                <div class="alert alert-info">
+                    <div class="alert-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h4>حالة النتائج الحالية</h4>
+                        <p>لا توجد نتائج متاحة حالياً. سيتم عرض النتائج بعد إتمام عملية التسجيل والبدء في الدراسة.</p>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn btn-primary" onclick="checkRegistrationStatus()">
+                            <i class="fas fa-search"></i>
+                            التحقق من حالة التسجيل
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Progress Overview -->
+            <div class="progress-overview">
+                <div class="overview-card">
+                    <div class="overview-header">
+                        <h3>نظرة عامة على التقدم الأكاديمي</h3>
+                        <div class="semester-selector">
+                            <select id="semesterSelect" disabled>
+                                <option value="">لم يتم التسجيل بعد</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="overview-content">
+                        <div class="progress-stats">
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">0</span>
+                                    <span class="stat-label">مقررات مكتملة</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">0</span>
+                                    <span class="stat-label">ساعات معتمدة</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">-</span>
+                                    <span class="stat-label">المعدل التراكمي</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value">-</span>
+                                    <span class="stat-label">التقدير العام</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Courses -->
+            <div class="upcoming-section">
+                <div class="upcoming-card">
+                    <div class="upcoming-header">
+                        <div class="upcoming-icon">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <div class="upcoming-title">
+                            <h3>المقررات المخطط لها</h3>
+                            <p>المقررات التي ستدرسينها بعد إتمام التسجيل</p>
+                        </div>
+                    </div>
+                    <div class="upcoming-content">
+                        <div class="courses-preview">
+                            <div class="course-preview-item">
+                                <div class="course-code">MATH 101</div>
+                                <div class="course-info">
+                                    <h4>التفاضل والتكامل 1</h4>
+                                    <p>3 ساعات معتمدة</p>
+                                </div>
+                                <div class="course-status">
+                                    <span class="status-badge upcoming">مخطط</span>
+                                </div>
+                            </div>
+                            <div class="course-preview-item">
+                                <div class="course-code">PHYS 102</div>
+                                <div class="course-info">
+                                    <h4>الفيزياء العامة</h4>
+                                    <p>4 ساعات معتمدة</p>
+                                </div>
+                                <div class="course-status">
+                                    <span class="status-badge upcoming">مخطط</span>
+                                </div>
+                            </div>
+                            <div class="course-preview-item">
+                                <div class="course-code">CHEM 103</div>
+                                <div class="course-info">
+                                    <h4>الكيمياء العضوية</h4>
+                                    <p>4 ساعات معتمدة</p>
+                                </div>
+                                <div class="course-status">
+                                    <span class="status-badge upcoming">مخطط</span>
+                                </div>
+                            </div>
+                            <div class="course-preview-item">
+                                <div class="course-code">CS 101</div>
+                                <div class="course-info">
+                                    <h4>مقدمة في علوم الحاسب</h4>
+                                    <p>3 ساعات معتمدة</p>
+                                </div>
+                                <div class="course-status">
+                                    <span class="status-badge upcoming">مخطط</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="upcoming-actions">
+                            <button class="btn btn-primary" onclick="viewFullSchedule()">
+                                <i class="fas fa-calendar"></i>
+                                عرض الجدول الكامل
+                            </button>
+                            <button class="btn btn-secondary" onclick="registerForCourses()">
+                                <i class="fas fa-plus"></i>
+                                التسجيل في المقررات
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade Scale Information -->
+            <div class="grade-scale-section">
+                <div class="grade-scale-card">
+                    <div class="grade-scale-header">
+                        <div class="scale-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>سلم التقديرات الأكاديمية</h3>
+                    </div>
+                    <div class="grade-scale-content">
+                        <div class="scale-table">
+                            <div class="scale-row scale-header">
+                                <div class="scale-cell">التقدير</div>
+                                <div class="scale-cell">الرمز</div>
+                                <div class="scale-cell">النقاط</div>
+                                <div class="scale-cell">النسبة المئوية</div>
+                            </div>
+                            <div class="scale-row excellent">
+                                <div class="scale-cell">ممتاز مرتفع</div>
+                                <div class="scale-cell">A+</div>
+                                <div class="scale-cell">5.00</div>
+                                <div class="scale-cell">95-100</div>
+                            </div>
+                            <div class="scale-row excellent">
+                                <div class="scale-cell">ممتاز</div>
+                                <div class="scale-cell">A</div>
+                                <div class="scale-cell">4.75</div>
+                                <div class="scale-cell">90-94</div>
+                            </div>
+                            <div class="scale-row very-good">
+                                <div class="scale-cell">جيد جداً مرتفع</div>
+                                <div class="scale-cell">B+</div>
+                                <div class="scale-cell">4.50</div>
+                                <div class="scale-cell">85-89</div>
+                            </div>
+                            <div class="scale-row very-good">
+                                <div class="scale-cell">جيد جداً</div>
+                                <div class="scale-cell">B</div>
+                                <div class="scale-cell">4.00</div>
+                                <div class="scale-cell">80-84</div>
+                            </div>
+                            <div class="scale-row good">
+                                <div class="scale-cell">جيد مرتفع</div>
+                                <div class="scale-cell">C+</div>
+                                <div class="scale-cell">3.50</div>
+                                <div class="scale-cell">75-79</div>
+                            </div>
+                            <div class="scale-row good">
+                                <div class="scale-cell">جيد</div>
+                                <div class="scale-cell">C</div>
+                                <div class="scale-cell">3.00</div>
+                                <div class="scale-cell">70-74</div>
+                            </div>
+                            <div class="scale-row acceptable">
+                                <div class="scale-cell">مقبول مرتفع</div>
+                                <div class="scale-cell">D+</div>
+                                <div class="scale-cell">2.50</div>
+                                <div class="scale-cell">65-69</div>
+                            </div>
+                            <div class="scale-row acceptable">
+                                <div class="scale-cell">مقبول</div>
+                                <div class="scale-cell">D</div>
+                                <div class="scale-cell">2.00</div>
+                                <div class="scale-cell">60-64</div>
+                            </div>
+                            <div class="scale-row fail">
+                                <div class="scale-cell">راسب</div>
+                                <div class="scale-cell">F</div>
+                                <div class="scale-cell">1.00</div>
+                                <div class="scale-cell">أقل من 60</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Calendar -->
+            <div class="calendar-section">
+                <div class="calendar-card">
+                    <div class="calendar-header">
+                        <div class="calendar-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>التقويم الأكاديمي</h3>
+                    </div>
+                    <div class="calendar-content">
+                        <div class="calendar-events">
+                            <div class="event-item upcoming">
+                                <div class="event-date">
+                                    <span class="event-day">15</span>
+                                    <span class="event-month">أغسطس</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>بداية التسجيل للفصل الأول</h4>
+                                    <p>فتح باب التسجيل في المقررات</p>
+                                </div>
+                                <div class="event-status">
+                                    <span class="status-badge upcoming">قادم</span>
+                                </div>
+                            </div>
+                            <div class="event-item upcoming">
+                                <div class="event-date">
+                                    <span class="event-day">01</span>
+                                    <span class="event-month">سبتمبر</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>بداية الدراسة</h4>
+                                    <p>بداية الفصل الدراسي الأول</p>
+                                </div>
+                                <div class="event-status">
+                                    <span class="status-badge upcoming">قادم</span>
+                                </div>
+                            </div>
+                            <div class="event-item upcoming">
+                                <div class="event-date">
+                                    <span class="event-day">15</span>
+                                    <span class="event-month">أكتوبر</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>الاختبارات النصفية</h4>
+                                    <p>فترة الاختبارات النصفية</p>
+                                </div>
+                                <div class="event-status">
+                                    <span class="status-badge upcoming">قادم</span>
+                                </div>
+                            </div>
+                            <div class="event-item upcoming">
+                                <div class="event-date">
+                                    <span class="event-day">20</span>
+                                    <span class="event-month">ديسمبر</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>الاختبارات النهائية</h4>
+                                    <p>فترة الاختبارات النهائية</p>
+                                </div>
+                                <div class="event-status">
+                                    <span class="status-badge upcoming">قادم</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help and Resources -->
+            <div class="resources-section">
+                <div class="resources-card">
+                    <div class="resources-header">
+                        <div class="resources-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>المساعدة والموارد</h3>
+                    </div>
+                    <div class="resources-content">
+                        <div class="resources-grid">
+                            <a href="#" class="resource-item" onclick="showGradeCalculator()">
+                                <div class="resource-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <div class="resource-info">
+                                    <h4>حاسبة المعدل</h4>
+                                    <p>احسب معدلك التراكمي المتوقع</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item" onclick="showStudyPlan()">
+                                <div class="resource-icon">
+                                    <i class="fas fa-map"></i>
+                                </div>
+                                <div class="resource-info">
+                                    <h4>الخطة الدراسية</h4>
+                                    <p>عرض الخطة الدراسية للتخصص</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item" onclick="showAcademicAdvising()">
+                                <div class="resource-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="resource-info">
+                                    <h4>الإرشاد الأكاديمي</h4>
+                                    <p>التواصل مع المرشد الأكاديمي</p>
+                                </div>
+                            </a>
+                            <a href="#" class="resource-item" onclick="showTranscriptRequest()">
+                                <div class="resource-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="resource-info">
+                                    <h4>طلب كشف الدرجات</h4>
+                                    <p>طلب كشف درجات رسمي</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="notifications-section">
+                <div class="notifications-card">
+                    <div class="notifications-header">
+                        <div class="notifications-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3>الإشعارات الأكاديمية</h3>
+                    </div>
+                    <div class="notifications-content">
+                        <div class="notification-item">
+                            <div class="notification-icon info">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>تذكير: موعد التسجيل</h4>
+                                <p>يبدأ التسجيل للفصل الدراسي الأول في 15 أغسطس 2025</p>
+                                <span class="notification-time">منذ يوم واحد</span>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>مطلوب: إتمام الرسوم المالية</h4>
+                                <p>يرجى إتمام دفع الرسوم المالية لضمان التسجيل</p>
+                                <span class="notification-time">منذ 3 أيام</span>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>تم: قبول طلب الالتحاق</h4>
+                                <p>تم قبول طلبك للالتحاق بكلية الطب بنجاح</p>
+                                <span class="notification-time">منذ أسبوع</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../assets/images/kau-logo.png" alt="شعار جامعة الملك عبدالعزيز">
+                        <h4>جامعة الملك عبدالعزيز</h4>
+                    </div>
+                    <p>النتائج والدرجات - متابعة التقدم الأكاديمي</p>
+                </div>
+                <div class="footer-section">
+                    <h5>روابط مهمة</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">التقويم الأكاديمي</a></li>
+                        <li><a href="#">الخطة الدراسية</a></li>
+                        <li><a href="#">الإرشاد الأكاديمي</a></li>
+                        <li><a href="#">المساعدة والدعم</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>اتصل بنا</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 جامعة الملك عبدالعزيز. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="grades.js"></script>
+</body>
+</html>
+

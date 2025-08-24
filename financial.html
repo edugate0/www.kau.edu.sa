@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشؤون المالية - جامعة الملك عبدالعزيز</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="financial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="kau-logo.png" alt="شعار جامعة الملك عبدالعزيز" class="logo">
+                    <div class="logo-text">
+                        <h1>جامعة الملك عبدالعزيز</h1>
+                        <p>الشؤون المالية</p>
+                    </div>
+                </div>
+                <nav class="breadcrumb">
+                    <a href="academic.html">الرئيسية</a>
+                    <i class="fas fa-chevron-left"></i>
+                    <span>الشؤون المالية</span>
+                </nav>
+                <div class="header-actions">
+                    <a href="academic.html" class="back-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        العودة للرئيسية
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>الشؤون المالية والرسوم الدراسية</h1>
+                    <p>إدارة الرسوم الدراسية والمدفوعات المالية</p>
+                </div>
+                <div class="page-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value">3,000</span>
+                            <span class="stat-label">ريال سعودي</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="timeRemaining">24:00:00</span>
+                            <span class="stat-label">ساعة متبقية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert Section -->
+            <div class="alert-section">
+                <div class="alert alert-warning">
+                    <div class="alert-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h4>تنبيه مهم</h4>
+                        <p>يجب سداد رسوم معادلة المقررات وإصدار البطاقة الجامعية خلال 24 ساعة من تاريخ التسجيل</p>
+                    </div>
+                    <div class="alert-timer">
+                        <div class="timer-display" id="countdownTimer">
+                            <div class="timer-unit">
+                                <span class="timer-value" id="hours">23</span>
+                                <span class="timer-label">ساعة</span>
+                            </div>
+                            <div class="timer-separator">:</div>
+                            <div class="timer-unit">
+                                <span class="timer-value" id="minutes">45</span>
+                                <span class="timer-label">دقيقة</span>
+                            </div>
+                            <div class="timer-separator">:</div>
+                            <div class="timer-unit">
+                                <span class="timer-value" id="seconds">30</span>
+                                <span class="timer-label">ثانية</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- Course Equivalency Card -->
+                <div class="service-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="card-title">
+                            <h3>معادلة المقررات</h3>
+                            <p>رسوم معادلة المقررات المدروسة سابقاً</p>
+                        </div>
+                        <div class="card-status">
+                            <span class="status-badge pending">في الانتظار</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="fee-breakdown">
+                            <div class="fee-item">
+                                <span class="fee-label">عدد المقررات المطلوب معادلتها</span>
+                                <span class="fee-value">12 مقرر</span>
+                            </div>
+                            <div class="fee-item">
+                                <span class="fee-label">رسوم المعادلة لكل مقرر</span>
+                                <span class="fee-value">150 ريال</span>
+                            </div>
+                            <div class="fee-item total">
+                                <span class="fee-label">إجمالي رسوم المعادلة</span>
+                                <span class="fee-value">1,800 ريال</span>
+                            </div>
+                        </div>
+                        <div class="course-list">
+                            <h4>المقررات المطلوب معادلتها:</h4>
+                            <div class="courses-grid">
+                                <div class="course-item">
+                                    <span class="course-code">ARAB 101</span>
+                                    <span class="course-name">مهارات اللغة العربية</span>
+                                    <span class="course-hours">3 ساعات</span>
+                                </div>
+                                <div class="course-item">
+                                    <span class="course-code">BIOL 102</span>
+                                    <span class="course-name">علم الأحياء والوراثة</span>
+                                    <span class="course-hours">3 ساعات</span>
+                                </div>
+                                <div class="course-item">
+                                    <span class="course-code">CHEM 102</span>
+                                    <span class="course-name">الكيمياء للعلوم الصحية</span>
+                                    <span class="course-hours">4 ساعات</span>
+                                </div>
+                                <div class="course-item">
+                                    <span class="course-code">EDU 102</span>
+                                    <span class="course-name">مهارات التواصل</span>
+                                    <span class="course-hours">2 ساعات</span>
+                                </div>
+                                <div class="course-item">
+                                    <span class="course-code">ENGL 102</span>
+                                    <span class="course-name">اللغة الإنجليزية للأغراض الأكاديمية</span>
+                                    <span class="course-hours">4 ساعات</span>
+                                </div>
+                                <div class="course-item">
+                                    <span class="course-code">ISLM 102</span>
+                                    <span class="course-name">الأخلاق الإسلامية</span>
+                                    <span class="course-hours">4 ساعات</span>
+                                </div>
+                            </div>
+                            <button class="view-all-btn" onclick="toggleCourseList()">
+                                <span class="btn-text">عرض جميع المقررات</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- University Card Card -->
+                <div class="service-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <div class="card-title">
+                            <h3>إصدار البطاقة الجامعية</h3>
+                            <p>رسوم إصدار البطاقة الجامعية الجديدة</p>
+                        </div>
+                        <div class="card-status">
+                            <span class="status-badge pending">في الانتظار</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="fee-breakdown">
+                            <div class="fee-item">
+                                <span class="fee-label">رسوم إصدار البطاقة</span>
+                                <span class="fee-value">100 ريال</span>
+                            </div>
+                            <div class="fee-item">
+                                <span class="fee-label">رسوم التصوير والطباعة</span>
+                                <span class="fee-value">50 ريال</span>
+                            </div>
+                            <div class="fee-item">
+                                <span class="fee-label">رسوم التوصيل (اختياري)</span>
+                                <span class="fee-value">50 ريال</span>
+                            </div>
+                            <div class="fee-item total">
+                                <span class="fee-label">إجمالي رسوم البطاقة</span>
+                                <span class="fee-value">200 ريال</span>
+                            </div>
+                        </div>
+                        <div class="card-features">
+                            <h4>مميزات البطاقة الجامعية:</h4>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> دخول المباني الجامعية</li>
+                                <li><i class="fas fa-check"></i> استخدام المكتبة</li>
+                                <li><i class="fas fa-check"></i> الوصول للمختبرات</li>
+                                <li><i class="fas fa-check"></i> خصومات الطلاب</li>
+                                <li><i class="fas fa-check"></i> استخدام المواصلات الجامعية</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Summary -->
+            <div class="payment-summary">
+                <div class="summary-card">
+                    <div class="summary-header">
+                        <h3>ملخص المدفوعات</h3>
+                        <div class="summary-status">
+                            <i class="fas fa-check-circle"></i>
+                            <span>تم السداد</span>
+                        </div>
+                    </div>
+                    <div class="summary-content">
+                        <div class="summary-items">
+                            <div class="summary-item">
+                                <span class="item-label">رسوم معادلة المقررات</span>
+                                <span class="item-value">1,800 ريال</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="item-label">رسوم إصدار البطاقة الجامعية</span>
+                                <span class="item-value">200 ريال</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="item-label">رسوم إدارية</span>
+                                <span class="item-value">100 ريال</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="item-label">ضريبة القيمة المضافة (15%)</span>
+                                <span class="item-value">315 ريال</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-item total">
+                                <span class="item-label">المبلغ الإجمالي</span>
+                                <span class="item-value">2,415 ريال</span>
+                            </div>
+                            <div class="summary-item discount">
+                                <span class="item-label">خصم الطلاب المتفوقين (20%)</span>
+                                <span class="item-value">-483 ريال</span>
+                            </div>
+                            <div class="summary-item final-total">
+                                <span class="item-label">المبلغ النهائي المطلوب</span>
+                                <span class="item-value">3,000 ريال</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bank Information -->
+            <div class="bank-info-section">
+                <div class="bank-card">
+                    <div class="bank-header">
+                        <div class="bank-logo">
+                            <img src="../assets/images/alinma-logo.png" alt="بنك الإنماء" onerror="this.style.display='none'">
+                            <i class="fas fa-university" style="display: none;"></i>
+                        </div>
+                        <div class="bank-title">
+                            <h3>بيانات الحساب البنكي</h3>
+                            <p>للتحويل المصرفي أو الإيداع</p>
+                        </div>
+                        <button class="copy-all-btn" onclick="copyAllBankInfo()">
+                            <i class="fas fa-copy"></i>
+                            نسخ جميع البيانات
+                        </button>
+                    </div>
+                    <div class="bank-details">
+                        <div class="bank-detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-university"></i>
+                                <span>اسم البنك</span>
+                            </div>
+                            <div class="detail-value">
+                                <span id="bankName">بنك الإنماء</span>
+                                <button class="copy-btn" onclick="copyToClipboard('bankName')">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bank-detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-hashtag"></i>
+                                <span>رقم الحساب</span>
+                            </div>
+                            <div class="detail-value">
+                                <span id="accountNumber">68201186150000</span>
+                                <button class="copy-btn" onclick="copyToClipboard('accountNumber')">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bank-detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-credit-card"></i>
+                                <span>رقم الآيبان</span>
+                            </div>
+                            <div class="detail-value">
+                                <span id="ibanNumber">SA1405000068201186150000</span>
+                                <button class="copy-btn" onclick="copyToClipboard('ibanNumber')">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bank-detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-user"></i>
+                                <span>اسم المستفيد</span>
+                            </div>
+                            <div class="detail-value">
+                                <span id="beneficiaryName">جامعة الملك عبدالعزيز - الشؤون المالية</span>
+                                <button class="copy-btn" onclick="copyToClipboard('beneficiaryName')">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bank-qr">
+                        <div class="qr-container">
+                            <div class="qr-placeholder">
+                                <i class="fas fa-qrcode"></i>
+                                <p>رمز QR للدفع السريع</p>
+                            </div>
+                        </div>
+                        <p class="qr-instruction">امسح الرمز للدفع عبر تطبيق البنك</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Upload Section -->
+            <div class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-header">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="upload-title">
+                            <h3>رفع إيصال السداد</h3>
+                            <p>يرجى رفع صورة واضحة من إيصال السداد أو التحويل البنكي</p>
+                        </div>
+                    </div>
+                    <div class="upload-content">
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-placeholder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h4>اسحب الملف هنا أو انقر للاختيار</h4>
+                                <p>يدعم النظام ملفات: JPG, PNG, PDF (حد أقصى 5 ميجابايت)</p>
+                            </div>
+                            <input type="file" id="receiptFile" accept=".jpg,.jpeg,.png,.pdf" multiple>
+                        </div>
+                        <div class="uploaded-files" id="uploadedFiles"></div>
+                        <div class="upload-actions">
+                            <button class="btn btn-primary" onclick="uploadReceipts()" disabled id="uploadBtn">
+                                <i class="fas fa-upload"></i>
+                                رفع الإيصالات
+                            </button>
+                            <button class="btn btn-secondary" onclick="clearUploads()">
+                                <i class="fas fa-trash"></i>
+                                مسح الكل
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Tracking -->
+            <div class="status-section">
+                <div class="status-card">
+                    <div class="status-header">
+                        <h3>تتبع حالة الطلب</h3>
+                        <div class="status-id">
+                            <span>رقم الطلب: #FIN-2025-001234</span>
+                        </div>
+                    </div>
+                    <div class="status-timeline">
+                        <div class="timeline-item completed">
+                            <div class="timeline-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>تم إنشاء الطلب</h4>
+                                <p>تم إنشاء طلب الدفع بنجاح</p>
+                                <span class="timeline-date">25 يوليو 2025 - 10:30 ص</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item active">
+                            <div class="timeline-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>في انتظار السداد</h4>
+                                <p>يرجى إتمام عملية السداد ورفع الإيصال</p>
+                                <span class="timeline-date">في الانتظار</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>مراجعة الإيصال</h4>
+                                <p>سيتم مراجعة الإيصال والتحقق من السداد</p>
+                                <span class="timeline-date">-</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>تم التأكيد</h4>
+                                <p>تأكيد السداد وإتمام العملية</p>
+                                <span class="timeline-date">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help Section -->
+            <div class="help-section">
+                <div class="help-card">
+                    <div class="help-header">
+                        <div class="help-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>هل تحتاج مساعدة؟</h3>
+                    </div>
+                    <div class="help-content">
+                        <div class="help-options">
+                            <a href="#" class="help-option">
+                                <i class="fas fa-phone"></i>
+                                <div class="help-text">
+                                    <h4>اتصل بنا</h4>
+                                    <p>800-11-69528</p>
+                                </div>
+                            </a>
+                            <a href="#" class="help-option">
+                                <i class="fas fa-envelope"></i>
+                                <div class="help-text">
+                                    <h4>البريد الإلكتروني</h4>
+                                    <p>financial@kau.edu.sa</p>
+                                </div>
+                            </a>
+                            <a href="#" class="help-option">
+                                <i class="fas fa-comments"></i>
+                                <div class="help-text">
+                                    <h4>الدردشة المباشرة</h4>
+                                    <p>متاح من 8 ص إلى 4 م</p>
+                                </div>
+                            </a>
+                            <a href="#" class="help-option">
+                                <i class="fas fa-book"></i>
+                                <div class="help-text">
+                                    <h4>دليل المساعدة</h4>
+                                    <p>الأسئلة الشائعة</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="kau-logo.png" alt="شعار جامعة الملك عبدالعزيز">
+                        <h4>جامعة الملك عبدالعزيز</h4>
+                    </div>
+                    <p>الشؤون المالية - خدمة متميزة لطلابنا الأعزاء</p>
+                </div>
+                <div class="footer-section">
+                    <h5>روابط مهمة</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">سياسة الرسوم</a></li>
+                        <li><a href="#">طرق الدفع</a></li>
+                        <li><a href="#">الاستعلام عن المدفوعات</a></li>
+                        <li><a href="#">المساعدة والدعم</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>اتصل بنا</h5>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>800-11-69528</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>financial@kau.edu.sa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 جامعة الملك عبدالعزيز. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/financial.js"></script>
+</body>
+</html>
+

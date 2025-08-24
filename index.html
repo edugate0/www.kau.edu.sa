@@ -3,56 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوابة القبول - جامعة الملك عبدالعزيز</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>تسجيل الدخول - جامعة الملك عبدالعزيز</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <header class="header">
-            <div class="logo-section">
-                <img src="kau_logo.png" alt="شعار جامعة الملك عبدالعزيز" class="logo">
-                <div class="university-info">
-                    <h1>جامعة الملك عبدالعزيز</h1>
-                    <h2>بوابة القبول الإلكتروني</h2>
-                </div>
-            </div>
-        </header>
-
-        <main class="main-content">
-            <div class="welcome-section">
-                <h3>مرحباً بك في بوابة القبول</h3>
-                <p>يمكنك الاستعلام عن حالة قبولك وإتمام إجراءات التسجيل</p>
-            </div>
-
-            <div class="inquiry-form">
-                <h4>الاستعلام عن القبول</h4>
-                <form id="inquiryForm">
-                    <div class="form-group">
-                        <label for="nationalId">رقم الهوية الوطنية</label>
-                        <input type="text" id="nationalId" name="nationalId" required maxlength="10" placeholder="أدخل رقم الهوية الوطنية">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">البريد الإلكتروني</label>
-                        <input type="email" id="email" name="email" required placeholder="أدخل البريد الإلكتروني">
-                    </div>
-
-                    <button type="submit" class="btn-primary">استعلام عن القبول</button>
-                </form>
-            </div>
-
-            <div id="admissionResult" class="admission-result hidden">
-                <!-- سيتم عرض نتيجة الاستعلام هنا -->
-            </div>
-        </main>
-
-        <footer class="footer">
-            <p>&copy; 2025 جامعة الملك عبدالعزيز - جميع الحقوق محفوظة</p>
-        </footer>
+<body class="login-page">
+    <!-- Background Animation -->
+    <div class="login-background">
+        <div class="animated-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Login Container -->
+    <div class="login-container">
+        <!-- Logo Section -->
+        <div class="login-header">
+            <img src="kau-logo.png" alt="شعار جامعة الملك عبدالعزيز" class="login-logo">
+            <h1>جامعة الملك عبدالعزيز</h1>
+            <p>بوابة الخدمات الأكاديمية</p>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form-container">
+            <div class="login-tabs">
+                <button class="tab-btn active" data-tab="student">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>طالب</span>
+                </button>
+            </div>
+
+            <form class="login-form" id="loginForm">
+                <h2 id="loginTitle">تسجيل الدخول</h2>
+                <p id="loginSubtitle">يرجى إدخال بياناتك للوصول إلى البوابة الأكاديمية</p>
+
+                <!-- User Type Selection -->
+                <input type="hidden" id="userType" value="student">
+
+                <!-- Username Field -->
+                <div class="form-group">
+                    <label for="username" id="usernameLabel">الرقم الجامعي / اسم المستخدم</label>
+                    <div class="input-container">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="username" name="username" placeholder="أدخل الرقم الجامعي أو اسم المستخدم" required>
+                        <div class="input-validation">
+                            <i class="fas fa-check validation-icon"></i>
+                        </div>
+                    </div>
+                    <small class="input-hint" id="usernameHint"></small>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password">كلمة المرور</label>
+                    <div class="input-container">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword()">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="strength-bar">
+                            <div class="strength-fill"></div>
+                        </div>
+                        <span class="strength-text">قوة كلمة المرور: متوسطة</span>
+                    </div>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        تذكرني
+                    </label>
+                    <a href="#" class="forgot-password" onclick="showForgotPassword()">نسيت كلمة المرور؟</a>
+                </div>
+
+                <!-- Security Verification -->
+                <div class="form-group">
+                    <label for="captcha">التحقق الأمني</label>
+                    <div class="captcha-container">
+                        <div class="captcha-question" id="captchaQuestion">
+                            <span id="captchaText">7 + 10 × 9 = ?</span>
+                            <button type="button" class="captcha-refresh" onclick="refreshCaptcha()">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                        <input type="text" id="captcha" name="captcha" placeholder="أدخل الإجابة" required>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn" id="loginBtn">
+                    <span class="btn-text">تسجيل الدخول</span>
+                    <span class="btn-loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        جاري التحقق...
+                    </span>
+                </button>
+
+                <!-- Alternative Login Methods -->
+                <div class="divider">
+                    <span>أو</span>
+                </div>
+
+                <div class="alternative-login">
+                    <button type="button" class="alt-login-btn microsoft-btn" onclick="loginWithMicrosoft()">
+                        <i class="fab fa-microsoft"></i>
+                        تسجيل الدخول بـ Microsoft
+                    </button>
+                    <button type="button" class="alt-login-btn google-btn" onclick="loginWithGoogle()">
+                        <i class="fab fa-google"></i>
+                        تسجيل الدخول بـ Google
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="quick-links">
+            <h4>وصول سريع</h4>
+            <div class="links-grid">
+                <a href="#" class="quick-link">
+                    <i class="fas fa-calendar"></i>
+                    <span>التقويم الأكاديمي</span>
+                </a>
+                <a href="#" class="quick-link">
+                    <i class="fas fa-book"></i>
+                    <span>دليل الطالب</span>
+                </a>
+                <a href="#" class="quick-link">
+                    <i class="fas fa-phone"></i>
+                    <span>اتصل بنا</span>
+                </a>
+                <a href="#" class="quick-link">
+                    <i class="fas fa-question-circle"></i>
+                    <span>المساعدة</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="login-footer">
+            <div class="footer-links">
+                <a href="#">سياسة الخصوصية</a>
+                <a href="#">شروط الاستخدام</a>
+                <a href="#">إمكانية الوصول</a>
+            </div>
+            <div class="system-status">
+                <span class="status-indicator online"></span>
+                <span>النظام متاح</span>
+            </div>
+            <p>&copy; 2025 جامعة الملك عبدالعزيز. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3>تم تسجيل الدخول بنجاح</h3>
+            <p>مرحباً بك في بوابة الخدمات الأكاديمية</p>
+            <p>سيتم توجيهك إلى لوحة التحكم خلال قليل...</p>
+            <button class="success-btn" onclick="redirectToDashboard()">
+                الانتقال إلى لوحة التحكم
+            </button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
 
